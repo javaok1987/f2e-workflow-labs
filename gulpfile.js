@@ -48,3 +48,8 @@ gulp.task('clean', function(callback) {
         }).then(callback);
 });
 
+gulp.task('watch', function() {
+    gulp.watch('app/**/*.js', ['output2']);
+}).on('change', function(event) {
+    console.log('File ' + event.path + ' was ' + event.type);
+});
