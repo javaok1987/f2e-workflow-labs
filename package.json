@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/javaok1987/f2e-workflow-labs#readme",
   "dependencies": {
+    "del": "^2.0.1",
     "lodash": "^3.10.1"
   },
   "devDependencies": {

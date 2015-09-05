@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var del = require('del');
 
 gulp.task('default', ['task1'], function() {
     console.log('Hello, Gulp!');
@@ -38,4 +39,8 @@ gulp.task('output3', function() {
 gulp.task('output4', function() {
     gulp.src(['assets/vendor/angular/**/*.js', 'assets/vendor/angular-animate/angular-*.js'])
         .pipe(gulp.dest('output4'));
+});
+
+gulp.task('clean', function() {
+    del(['output2/vendor/bootstrap/**', '!output2/vendor/bootstrap']);
 });
