@@ -1,0 +1,27 @@
+{
+  "name": "f2e-workflow-labs",
+  "version": "0.0.1",
+  "description": "f2e lab",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "browser-sync start --server --files=\"*\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://javaok1987@github.com/javaok1987/f2e-workflow-labs.git"
+  },
+  "author": "ian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/javaok1987/f2e-workflow-labs/issues"
+  },
+  "homepage": "https://github.com/javaok1987/f2e-workflow-labs#readme",
+  "dependencies": {
+    "lodash": "^3.10.1"
+  },
+  "devDependencies": {
+    "jquery": "^1.11.3",
+    "tap": "^1.4.0"
+  }
+}
