@@ -34,3 +34,8 @@ gulp.task('output3', function() {
         })
         .pipe(gulp.dest('output3'));
 });
+
+gulp.task('output4', function() {
+    gulp.src(['assets/vendor/angular/**/*.js', 'assets/vendor/angular-animate/angular-*.js'])
+        .pipe(gulp.dest('output4'));
+});
