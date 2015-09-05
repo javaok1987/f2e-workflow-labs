@@ -62,15 +62,17 @@ gulp.task('concat-app', function() {
     gulp.src('app/**/*.module.js')
     	.pipe(gulp.dest('src/app'))
         .pipe(concat('app.modules.js'))
-        .pipe(uglify({mangle: false}))
-        .pipe(rename('app.modules.min.js'))
+        .pipe(gulp.dest('assets'))
+        .pipe(uglify())
+        .pipe(rename({extname: ".min.js"}))
         .pipe(gulp.dest('assets'));
 
     gulp.src(['app/**/*.js', '!app/**/*.module.js'])
     	.pipe(gulp.dest('src/app'))
         .pipe(concat('app.bundles.js'))
+        .pipe(gulp.dest('assets'))
         .pipe(uglify({mangle: false}))
-        .pipe(rename('app.bundles.min.js'))
+        .pipe(rename({extname: ".min.js"}))
         .pipe(gulp.dest('assets'));
 
 });
