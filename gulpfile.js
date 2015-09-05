@@ -13,3 +13,13 @@ gulp.task('task2', function(callback) {
     console.log('Task2, Output...');
     callback();
 });
+
+gulp.task('output1', function () {
+	gulp.src('assets/vendor/bootstrap/**/*.js')
+		.pipe(gulp.dest('outpou1'));
+});
+
+gulp.task('output2', function () {
+	gulp.src('assets/vendor/bootstrap/**/*.js', {base:'assets'})
+		.pipe(gulp.dest('outpou2'));
+});
