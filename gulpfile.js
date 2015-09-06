@@ -5,10 +5,10 @@ var del = require('del');
 // var uglify = require('gulp-uglify');
 // var rename = require('gulp-rename');
 
-var plugins = require('gulp-load-plugins')();
-
 
 var config = require('./config');
+
+var plugins = require('gulp-load-plugins')();
 
 gulp.task('default', ['task1'], function() {
     console.log('Hello, Gulp!');
