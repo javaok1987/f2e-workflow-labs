@@ -4,6 +4,8 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 
+var config = require('./config');
+
 gulp.task('default', ['task1'], function() {
     console.log('Hello, Gulp!');
 });
@@ -52,14 +54,14 @@ gulp.task('clean', function(callback) {
 });
 
 gulp.task('watch', function() {
-    gulp.watch('app/**/*.js', ['concat-app']);
+    gulp.watch(config.appPath + '**/*.js', ['concat-app']);
 }).on('change', function(event) {
     console.log('File ' + event.path + ' was ' + event.type);
 });
 
 
 gulp.task('concat-app', function() {
-    gulp.src('app/**/*.module.js')
+    gulp.src(config.appPath + '**/*.module.js')
     	.pipe(gulp.dest('src/app'))
         .pipe(concat('app.modules.js'))
         .pipe(gulp.dest('assets'))
@@ -67,7 +69,7 @@ gulp.task('concat-app', function() {
         .pipe(rename({extname: ".min.js"}))
         .pipe(gulp.dest('assets'));
 
-    gulp.src(['app/**/*.js', '!app/**/*.module.js'])
+    gulp.src([config.appPath +  '**/*.js', '!' + config.appPath + '**/*.module.js'])
     	.pipe(gulp.dest('src/app'))
         .pipe(concat('app.bundles.js'))
         .pipe(gulp.dest('assets'))
